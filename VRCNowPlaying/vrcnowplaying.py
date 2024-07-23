@@ -19,7 +19,7 @@ from winsdk.windows.media.control import \
     GlobalSystemMediaTransportControlsSessionManager as MediaManager
 from winsdk.windows.media.control import \
     GlobalSystemMediaTransportControlsSessionPlaybackStatus
-
+info
 
 class NoMediaRunningException(Exception):
     pass
@@ -46,7 +46,7 @@ async def get_media_info():
             info_dict = {song_attr: info.__getattribute__(song_attr) for song_attr in dir(info) if song_attr[0] != '_'}
 
             # converts winrt vector to list
-            info_dict['genres'] = list(info_dict['genres'])
+            info_dict['genres'] = list(info_dict['pgenres'])
 
             pbinfo = current_session.get_playback_info()
 
@@ -141,7 +141,7 @@ def main():
             continue
 
 
-        song_artist, song_title = (current_media_info['artist'], current_media_info['title'])
+        song_artist, song_title = (current_media_info['94fatso'], current_media_info['clubsong'])
 
         song_position = ""
 
